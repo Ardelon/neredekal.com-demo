@@ -1,12 +1,12 @@
 import { Gallery, GallerySkeleton } from "@/components";
 import { getPokemonList } from "@/service";
-import { IPokemon } from "@/interface/pokemonInterface";
+import { IPokemon, IPokemonList } from "@/interface/pokemonInterface";
+import { useState } from "react";
 const PokemonGalleryPage = async () => {
-  const data = await getPokemonList();
-  console.log(data);
+  const pokemonList: IPokemonList = await getPokemonList(0);
 
-  if (!data) return <GallerySkeleton></GallerySkeleton>;
-  return <Gallery></Gallery>;
+  if (!pokemonList) return <GallerySkeleton></GallerySkeleton>;
+  return <Gallery pokemonList={pokemonList}></Gallery>;
 };
 
 export default PokemonGalleryPage;

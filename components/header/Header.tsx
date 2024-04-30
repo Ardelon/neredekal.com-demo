@@ -1,11 +1,12 @@
+import Link from "next/link";
+
 const Header = () => {
   return (
     <header>
       <h1>Header</h1>
       <nav>
-        <a>link1</a>
-        <a>link2</a>
-        <a>link3</a>
+        <Link href="/">Home Page</Link>
+        <Link href="/pokemon">Pokemon</Link>
       </nav>
     </header>
   );

@@ -39,8 +39,8 @@ interface IPokemon {
   weight: number;
 }
 interface IPokemonList {
-  next: string;
-  previous: string;
+  next: string | null;
+  previous: string | null;
   results: [{ name: string; url: string }];
 }
 

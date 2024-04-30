@@ -17,12 +17,14 @@ const getPokemonList = (offset: number = 0) => {
       if (isValid) {
         return mapPokemonList(response);
       } else {
-        return { message: "Something is wrong with data source" };
+        console.log("Something is wrong with data source");
+        return { next: "", previous: "", results: [] };
       }
     })
     .catch((error) => {
       console.log(error);
-      return { message: "Data source is not responding correctly" };
+      console.log("Data source is not responding correctly");
+      return { next: "", previous: "", results: [] };
     });
 };
 const getPokemon = (identifier: string) => {

@@ -13,16 +13,8 @@ export const Gallery = (props: propsInterface) => {
   });
 
   return (
-    <section>
+    <section className="flex flex-wrap w-4/5 m-auto gap-4">
       {galleryCards}
-      {/* <Button name={"Previous"} click={goPrevious}></Button>
-      <Button name={"Next"} click={goNext}></Button> */}
-      {/* <Link href={props.pokemonList.previous || ""}>
-        <button>Previous</button>
-      </Link>
-      <Link href={props.pokemonList.next || ""}>
-        <button>Next</button>
-      </Link> */}
     </section>
   );
 };

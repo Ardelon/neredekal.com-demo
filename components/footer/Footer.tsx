@@ -1,5 +1,5 @@
 const Footer = () => {
-  return <footer className="sticky bt-0">footer</footer>;
+  return <footer className="">footer</footer>;
 };
 
 export default Footer;

@@ -1,3 +1,3 @@
 import { IPokemon, IPokemonList } from "./pokemonInterface";
-
-export type { IPokemon, IPokemonList };
+import { IErrorResponse } from "./serviceInterface";
+export type { IPokemon, IPokemonList, IErrorResponse };

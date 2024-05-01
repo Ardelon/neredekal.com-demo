@@ -1,8 +1,10 @@
 import { IPokemon } from "@/interface/pokemonInterface";
 import { getPokemon } from "@/service";
+import Image from "next/image";
 
 async function getData(params: string) {
-  const pokemon: IPokemon = await getPokemon(params);
+  const pokemon = await getPokemon(params);
+
   return pokemon;
 }
 
@@ -13,12 +15,13 @@ const PokemonDetailPage = async ({
 }) => {
   const pokemon = await getData(params.pokemon);
 
-  return (
-    <div>
-      <h1>{pokemon.name}</h1>
-      <span>{pokemon.weight}</span>
-    </div>
-  );
+  if ("message" in pokemon) {
+    console.error(pokemon.message);
+    return;
+  }
+
+  console.log(pokemon);
+  return <div></div>;
 };
 
 export default PokemonDetailPage;

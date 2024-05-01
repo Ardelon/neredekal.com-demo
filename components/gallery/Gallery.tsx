@@ -1,7 +1,5 @@
 import { IPokemonList } from "@/interface/pokemonInterface";
 import GalleryCard from "./GalleryCard";
-import Link from "next/link";
-import Button from "../button";
 
 interface propsInterface {
   pokemonList: IPokemonList;

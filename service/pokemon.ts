@@ -1,10 +1,12 @@
-import { IPokemon } from "@/interface/pokemonInterface";
+import { IPokemon, IPokemonList } from "@/interface/pokemonInterface";
 import { IErrorResponse } from "@/interface/serviceInterface";
 import { mapPokemon, mapPokemonList } from "@/mapper";
 import { validatePokemonData, validatePokemonListData } from "@/validator";
 import axios from "axios";
 
-const getPokemonList = (offset: number = 0) => {
+type PokemonListResponse = IPokemonList | IErrorResponse;
+
+const getPokemonList = (offset: number = 0): Promise<PokemonListResponse> => {
   let config = {
     method: "get",
     maxBodyLength: Infinity,
@@ -17,16 +19,14 @@ const getPokemonList = (offset: number = 0) => {
     .then((response) => {
       const [isValid, data] = validatePokemonListData(response);
       if (isValid) {
-        return mapPokemonList(response);
+        return mapPokemonList(data);
       } else {
-        console.log("Something is wrong with data source");
-        return { next: "", previous: "", results: [] };
+        return { message: "Something is wrong with data source" };
       }
     })
     .catch((error) => {
-      console.log(error);
-      console.log("Data source is not responding correctly");
-      return { next: "", previous: "", results: [] };
+      console.error(error);
+      return { message: "Data source is not responding correctly" };
     });
 };
 

@@ -1,11 +1,21 @@
-import { IPokemon } from "@/interface/pokemonInterface";
-import { getPokemon } from "@/service";
-import Image from "next/image";
+import { PokemonCard } from "@/components";
+import { getEvolutionChain, getSpecies } from "@/service";
 
-async function getData(params: string) {
-  const pokemon = await getPokemon(params);
+async function solveEvolutionChain(identifier: number) {
+  const species = await getSpecies(identifier);
 
-  return pokemon;
+  if ("message" in species) {
+    console.error(species.message);
+    return;
+  }
+
+  const evolutionChain = await getEvolutionChain(species.evolution_chain.url);
+  if ("message" in evolutionChain) {
+    console.error(evolutionChain.message);
+    return;
+  }
+
+  return evolutionChain;
 }
 
 const PokemonDetailPage = async ({
@@ -13,15 +23,14 @@ const PokemonDetailPage = async ({
 }: {
   params: { pokemon: string };
 }) => {
-  const pokemon = await getData(params.pokemon);
+  const evolutionChain = await solveEvolutionChain(parseInt(params.pokemon));
 
-  if ("message" in pokemon) {
-    console.error(pokemon.message);
-    return;
-  }
+  const evolutionChainCards = evolutionChain?.species.map((chain, index) => {
+    console.log(chain);
+    return <PokemonCard key={index} chain={chain} />;
+  });
 
-  console.log(pokemon);
-  return <div></div>;
+  return <div>{evolutionChainCards}</div>;
 };
 
 export default PokemonDetailPage;

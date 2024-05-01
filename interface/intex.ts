@@ -1,3 +1,12 @@
 import { IPokemon, IPokemonList } from "./pokemonInterface";
 import { IErrorResponse } from "./serviceInterface";
-export type { IPokemon, IPokemonList, IErrorResponse };
+import { IEvolutionChain } from "./evolutionChainInterface";
+import { ISpecies } from "./speciesInterface";
+
+export type {
+  IPokemon,
+  IPokemonList,
+  IErrorResponse,
+  IEvolutionChain,
+  ISpecies,
+};

@@ -9,6 +9,9 @@ import {
   validateTypeList,
 } from "./typeValidator";
 
+import { validateSpecies } from "./speciesValidator";
+import { validateEvolutionChain } from "./evolutionChainValidator";
+
 export {
   validatePokemonData,
   validatePokemonIdentifier,
@@ -16,4 +19,6 @@ export {
   validateType,
   validateTypeIdentifier,
   validateTypeList,
+  validateSpecies,
+  validateEvolutionChain,
 };

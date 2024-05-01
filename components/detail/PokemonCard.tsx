@@ -1,25 +1,32 @@
+import { getPokemon } from "@/service";
 import Link from "next/link";
 import React from "react";
 
 interface PokemonCardProps {
-  pokemonName: string;
-  description: string;
-  image?: string;
-  link?: string;
+  chain: {
+    name: string;
+    url: string;
+  };
 }
 
-const PokemonCard: React.FC<PokemonCardProps> = ({
-  pokemonName,
-  description,
-  image,
-  link,
-}) => {
+async function getData(identifier: string) {
+  const pokemon = await getPokemon(identifier);
+
+  if ("message" in pokemon) {
+    console.error(pokemon.message);
+    return;
+  }
+
+  return pokemon;
+}
+
+const PokemonCard: React.FC<PokemonCardProps> = async (chain) => {
+  const pokemon = await getData(chain.chain.name);
+
   return (
     <div className="">
-      {image && <img src={image} alt={`${pokemonName} image`} />}
-      <h2>{pokemonName}</h2>
-      <p>{description}</p>
-      <Link href={`/pokemon/${pokemonName}`}></Link>
+      <h1>{pokemon?.name}</h1>
+      <img src={pokemon?.sprites.front_default} />
     </div>
   );
 };

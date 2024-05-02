@@ -1,10 +1,12 @@
 import { getPokemon } from "@/service";
 import {
+  capitalizeFirstLetter,
   preparePokemonIdForDisplay,
   stripIdentifierFromUrl,
 } from "@/utilities";
 import Link from "next/link";
 import React from "react";
+import { Sphere } from "../uiKit";
 
 interface PokemonCardProps {
   chain: {
@@ -31,13 +33,22 @@ const PokemonCard: React.FC<PokemonCardProps> = async (chain) => {
       <Link href={`/pokemon/${pokemon?.id}`}>
         <div className="flex flex-row">
           <img src={pokemon?.sprites.front_default} />
-          <div>
-            <h1>{pokemon?.name}</h1>
-            <span>
+          <div className="ml-2">
+            <h1 className="font-semibold text-lg">
+              {capitalizeFirstLetter(pokemon?.name)}
+            </h1>
+            <span className="text-base">
               {preparePokemonIdForDisplay(
                 stripIdentifierFromUrl(chain.chain.url)
               )}
             </span>
+            <div className="flex flex-row justify-start">
+              {pokemon?.types.map((type, index) => {
+                return (
+                  <Sphere key={type.type.name + index} type={type.type.name} />
+                );
+              })}
+            </div>
           </div>
         </div>
       </Link>

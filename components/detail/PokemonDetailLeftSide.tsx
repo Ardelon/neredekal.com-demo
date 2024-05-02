@@ -2,6 +2,7 @@ import { IPokemon } from "@/interface/pokemonInterface";
 import { capitalizeFirstLetter } from "@/utilities";
 import Link from "next/link";
 import React from "react";
+import { Badge, Score } from "../uiKit";
 
 interface PokemonDetailLeftSideInterface {
   pokemon: IPokemon;
@@ -17,42 +18,54 @@ const PokemonDetailLeftSide: React.FC<PokemonDetailLeftSideInterface> = ({
       </div>
       <div>
         <div>
-          <label>Height</label>
-          <span>{pokemon.height}</span>
+          <label className="text-xl font-bold pt-3 block ">
+            Height : {pokemon.height}
+          </label>
         </div>
         <div>
-          <label>Weight</label>
-          <span>{pokemon.weight}</span>
+          <label className="text-xl font-bold pt-3 block ">
+            Weight : {pokemon.weight}
+          </label>
         </div>
         <div>
-          <label>Abilities</label>
+          <label className="text-xl font-bold pt-3 block">Abilities : </label>
           {pokemon.abilities.map((ability, index) => {
             return (
-              <Link
+              <p
+                className="pl-2 font-semibold"
                 key={ability.ability.name + index}
-                href={ability.ability.url}
               >
                 {ability.ability.name}
-              </Link>
+              </p>
             );
           })}
         </div>
         <div>
-          <label>Type</label>
-          {pokemon.types.map((type, index) => {
-            return <div key={type.type.name + index}>{type.type.name}</div>;
-          })}
+          <label className="text-xl font-bold py-3 block">Type</label>
+          <div className="flex flex-row gap-2 py-2">
+            {pokemon.types.map((type, index) => {
+              return (
+                <Badge type={type.type.name} key={type.type.name + index} />
+              );
+            })}
+          </div>
         </div>
         <div>
-          <label>{capitalizeFirstLetter(pokemon.name) + " Stats"}</label>
-          {pokemon?.stats.map((stat, index) => {
-            return (
-              <li key={stat.stat.name + index}>
-                <label>{capitalizeFirstLetter(stat.stat.name)}</label>
-                <label>{stat.base_stat}</label>
-              </li>
-            );
-          })}
+          <h4 className="text-xl font-bold py-3">
+            {capitalizeFirstLetter(pokemon.name) + " Stats"}
+          </h4>
+          <ul>
+            {pokemon?.stats.map((stat, index) => {
+              return (
+                <div className="" key={stat.stat.name + index}>
+                  <label className="text-lg font-semibold ">
+                    {capitalizeFirstLetter(stat.stat.name)}
+                  </label>
+                  <Score statValue={stat.base_stat} />
+                </div>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </div>

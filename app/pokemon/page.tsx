@@ -11,7 +11,7 @@ async function fetchPokemons(page: number) {
   return {
     pokemonList,
     totalPages: Math.ceil(
-      parseInt(process.env.POKEMON_COUNT ?? "1302", 10) / limit
+      parseInt(process.env.POKEMON_COUNT ?? "1025", 10) / limit
     ),
     currentPage: page,
   };

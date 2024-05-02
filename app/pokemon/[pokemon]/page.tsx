@@ -44,19 +44,17 @@ const PokemonDetailPage = async ({
   }
   const evolutionChain = await solveEvolutionChain(parseInt(params.pokemon));
 
-  // const evolutionChainCards = evolutionChain?.species.map((chain, index) => {
-  //   return <PokemonCard key={index} chain={chain} />;
-  // });
-
   return (
     <div className="flex flex-col">
       <PokemonDetailHeader identifier={params.pokemon} />
-      <div className="flex flex-row">
+      <div className="flex flex-row w-4/5 m-auto gap-8 justify-center">
         <PokemonDetailLeftSide pokemon={pokemon} />
-        <PokemonDetailRightSide evolutionChain={evolutionChain} />
+        <PokemonDetailRightSide
+          pokemon={pokemon}
+          evolutionChain={evolutionChain}
+        />
       </div>
       {/* <PokemonDetailDisplay identifier={params.pokemon}></PokemonDetailDisplay> */}
-      {/* <div className="flex flex-row gap-8">{evolutionChainCards}</div> */}
     </div>
   );
 };

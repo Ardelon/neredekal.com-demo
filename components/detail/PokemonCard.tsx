@@ -22,11 +22,24 @@ async function getData(identifier: string) {
 
 const PokemonCard: React.FC<PokemonCardProps> = async (chain) => {
   const pokemon = await getData(chain.chain.name);
-
+  const stats = pokemon?.stats.map((stat, index) => {
+    return (
+      <li key={stat.stat.name + index}>
+        <label>{stat.stat.name}</label>
+        <label>{stat.base_stat}</label>
+      </li>
+    );
+  });
   return (
     <div className="">
-      <h1>{pokemon?.name}</h1>
-      <img src={pokemon?.sprites.front_default} />
+      {/* <Link href={`/pokemon/${pokemon?.id}`}></Link> */}
+      <div className="front">
+        <h1>{pokemon?.name}</h1>
+        <img src={pokemon?.sprites.front_default} />
+      </div>
+      <div className="back">
+        <ul>{stats}</ul>
+      </div>
     </div>
   );
 };

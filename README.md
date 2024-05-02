@@ -83,3 +83,4 @@ de bu repository adresiyle paylaşmanız beklenecektir.
 ### Faydalı Linkler
 
 - [Pokemon Color Palette](https://pokemonpalette.com/)
+- [Pokemon Page Design](https://dribbble.com/shots/21488745-Pok-dex-Web-Version-Redesign)

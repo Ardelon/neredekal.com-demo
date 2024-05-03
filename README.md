@@ -32,32 +32,37 @@ değişiklik gösterebilir olmalıdır.
 Çalışma tamamlandığında bu codebase'i kişisel git repository'sine aktarmanız, çalışma bitiminde
 de bu repository adresiyle paylaşmanız beklenecektir.
 
-## Teknik Detaylar
+## Sayfalar & Tasarım
 
-- [ ] Pokémon's color palette consists of colors blue and yellow. The hexadecimal code for these two colors is #0075BE and #FFCC00, respectively
-
-### Sayfalar
+Uygulama aşağıdaki sayfalardan oluşmaktadır ve [bu tasarım](https://dribbble.com/shots/21488745-Pok-dex-Web-Version-Redesign) baz alınarak yapılmıştır.
 
 - Ana Sayfa (Listeleme Sayfası)
 - Detay Sayfası
 - Bulunamadı Sayfası
 
-### Uygulama Özellikleri
+Demo isterleri doğrultusunda ve zaman kısıtını da hesaba katınca daha fazla sayfa yazılmamış ve eldeki sayfalar zenginleştirilmiştir. Kullanılan API'ın sayfada sergilenen bilgilerle tam olarak örtüşmemesinden dolayı arzulanandan fazla istek atılmaktadır. Uygun API servisleri ile servis edilen veriler sayfalara uygun hale getirilirse performansta artış görülecektir.
 
-### Accessability
+## Lighthouse & Performans Test Sonuçları
 
-### SEO
+Lighthouse skorları aşağıda gösterilmiştir. Uygun olanı domain altından yayınlandıktan sonra bakılması olsa da fikir yürütmek için test yapmayı uygun gördüm. Performanstaki düşüklüğün sebebi, transfer edilmek ve sunulmak için optimize edilmemiş resimler ve kod dosyalarından kaynaklanmaktadır. Uygulamayı derlerken kod dosyaları küçültülebilir ve resimler servis edilirken webp formatında servis edilebilir. Ancak demo kapsamında ek bir servis uygulaması kullanılmadığından bu iyileştirmeler yapılamamıştır.
 
-### Performans Test Sonuçları
+Kalan değerler ise 100 veya 100'e yakın çıkmıştır. Zaman kısıtı ve projenin yayınlanmadığı göz önünde bulundurulursa değerler teorik olarak istenen seviyeleri yakalamıştır. Uygulama yayınlandıktan sonra tekrardan bir analiz aracı kullanılarak eksikler giderilmelidir. Bu eksiklerin bir kısmı için aşağıdaki liste kullanılabilir.
 
-#### Lighthouse
+[Frontend Checklist](https://github.com/thedaviddias/Front-End-Checklist)
+
+Görseller
+
+[Ana Sayfa (Listeleme Sayfası)](./homepage.png)
+[Detay Sayfası](./detailpage.png)
 
 ## Dikkat edilenler
 
+Aşağıdaki liste, projenin başında eklenmesi planlanmış özellikleri göstermektedir. Zaman kısıtından dolayı bir kısmı eksik kalsa da projenin ne kadar kapsamlı ele alındığına dair fikir vermektedir.
+
 - [ ] Sayfanın telefonda yanlışlıkla büyütülebilir olmasını meta tag ile önle
-- [ ] Bilinir Fontlar kullan, cihaz uyumlu olsun
+- [x] Bilinir Fontlar kullan, cihaz uyumlu olsun
   - [ ] Fallback Font kullan
-- [ ] Mobil uyumlu web arayüzü oluştur
+- [x] Mobil uyumlu web arayüzü oluştur
 - [ ] Build için performans iyileştirmeleri yap
   - [ ] Minify JS
   - [ ] Uglify JS
@@ -77,10 +82,11 @@ de bu repository adresiyle paylaşmanız beklenecektir.
 - [ ] OG Tag kullan
 - [x] Pagination
 - [ ] Loading Ekranı (Skeleton)
-- [ ] Logo yap
+- [x] Logo ekle
 - [ ] Detay sayfasında pokemonun renklerine göre renk paleti kullan
 
-### Faydalı Linkler
+## Faydalı Linkler
 
 - [Pokemon Color Palette](https://pokemonpalette.com/)
 - [Pokemon Page Design](https://dribbble.com/shots/21488745-Pok-dex-Web-Version-Redesign)
+- [Frontend Checklist](https://github.com/thedaviddias/Front-End-Checklist)

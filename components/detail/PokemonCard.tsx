@@ -32,7 +32,10 @@ const PokemonCard: React.FC<PokemonCardProps> = async (chain) => {
     <div className="">
       <Link href={`/pokemon/${pokemon?.id}`}>
         <div className="flex flex-row">
-          <img src={pokemon?.sprites.front_default} />
+          <img
+            alt={`${pokemon.name} default front image`}
+            src={pokemon?.sprites.front_default}
+          />
           <div className="ml-2">
             <h1 className="font-semibold text-lg">
               {capitalizeFirstLetter(pokemon?.name)}

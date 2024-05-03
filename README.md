@@ -44,9 +44,12 @@ Demo isterleri doğrultusunda ve zaman kısıtını da hesaba katınca daha fazl
 
 #### .env.production
 
-POKEMON_DISPLAY_COUNT=10 <!-- Listede Gösterilecek Pokemonların sayısı -->
-POKEMON_COUNT=1025 <!-- Toplam Pokemon Sayısı -->
-POKEMON_NOT_FOUND_DISPLAY_COUNT=10 <!-- Pokemon bulunamadığında Listede Gösterilecek Pokemonların sayısı -->
+- POKEMON_DISPLAY_COUNT=10
+  - Listede Gösterilecek Pokemonların sayısı
+- POKEMON_COUNT=1025
+  - Toplam Pokemon Sayısı
+- POKEMON_NOT_FOUND_DISPLAY_COUNT=10
+  - Pokemon bulunamadığında Listede Gösterilecek Pokemonların sayısı
 
 ## Lighthouse & Performans Test Sonuçları
 

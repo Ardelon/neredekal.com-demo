@@ -52,8 +52,10 @@ Kalan değerler ise 100 veya 100'e yakın çıkmıştır. Zaman kısıtı ve pro
 
 Görseller
 
-[Ana Sayfa (Listeleme Sayfası)](./homepage.png)
-[Detay Sayfası](./detailpage.png)
+<h3>Ana Sayfa (Listeleme Sayfası)</h3>
+<img src="./homepage.png" alt="Ana Sayfa (Listeleme Sayfası)">
+<h3>Detay Sayfası</h3>
+<img src="./detailpage.png"/>
 
 ## Dikkat edilenler
 

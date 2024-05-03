@@ -3,20 +3,23 @@ import { IPokemon } from "@/interface/pokemonInterface";
 import { capitalizeFirstLetter, preparePokemonIdForDisplay } from "@/utilities";
 import React from "react";
 import PokemonCard from "./PokemonCard";
+import { IErrorResponse } from "@/interface";
 
 interface PokemonDetailRightSideInterface {
-  evolutionChain: IEvolutionChain;
+  evolutionChain: IEvolutionChain | IErrorResponse;
   pokemon: IPokemon;
 }
 
 const PokemonDetailRightSide: React.FC<PokemonDetailRightSideInterface> = (
   props
 ) => {
-  const evolutionChainCards = props.evolutionChain?.species.map(
-    (chain, index) => {
+  let evolutionChainCards = new Array();
+
+  if ("species" in props.evolutionChain) {
+    evolutionChainCards = props.evolutionChain?.species.map((chain, index) => {
       return <PokemonCard key={index} chain={chain} />;
-    }
-  );
+    });
+  }
 
   if (evolutionChainCards.length < 3) {
     evolutionChainCards.push(<div></div>);

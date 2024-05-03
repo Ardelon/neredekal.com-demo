@@ -18,16 +18,16 @@ interface PokemonCardProps {
 async function getData(identifier: string) {
   const pokemon = await getPokemon(identifier);
 
-  if ("message" in pokemon) {
-    console.error(pokemon.message);
-    return;
-  }
-
   return pokemon;
 }
 
 const PokemonCard: React.FC<PokemonCardProps> = async (chain) => {
   const pokemon = await getData(chain.chain.name);
+
+  if ("message" in pokemon) {
+    console.error(pokemon.message);
+    return;
+  }
   return (
     <div className="">
       <Link href={`/pokemon/${pokemon?.id}`}>

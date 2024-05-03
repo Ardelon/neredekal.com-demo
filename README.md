@@ -38,9 +38,9 @@ de bu repository adresiyle paylaşmanız beklenecektir.
 
 ### Sayfalar
 
-- Ana Sayfa
-- Listeleme Sayfası
+- Ana Sayfa (Listeleme Sayfası)
 - Detay Sayfası
+- Bulunamadı Sayfası
 
 ### Uygulama Özellikleri
 
@@ -63,19 +63,19 @@ de bu repository adresiyle paylaşmanız beklenecektir.
   - [ ] Uglify JS
   - [ ] Sourcemap Kaldır
 - [ ] Resimler için webp dönüştürücü kur ve cache'le
-- [ ] Arama Fonksiyonu kullan
+- [x] Arama Fonksiyonu kullan
 - [ ] Preload, prefetch sources
-- [ ] Sayfaları inşaa ederken etiket kullanımlarına dikkat et, uyumlu kullan
-- [ ] Hata kontrolü yap
+- [x] Sayfaları inşaa ederken etiket kullanımlarına dikkat et, uyumlu kullan
+- [x] Hata kontrolü yap
 - [ ] Bağlantı hatası için hata ekranı oluştur
-- [ ] Bulunamayan sayfa için sayfa düzenle
+- [x] Bulunamayan sayfa için sayfa düzenle
 - [ ] Klavye navigasyonu dizayn et
 - [ ] Google Analytics için etiket oluştur
 - [ ] Sitemap.xml oluştur
 - [ ] robots.txt oluştur
 - [ ] Dil tercihi için mekanizma oluştur
 - [ ] OG Tag kullan
-- [ ] Pagination
+- [x] Pagination
 - [ ] Loading Ekranı (Skeleton)
 - [ ] Logo yap
 - [ ] Detay sayfasında pokemonun renklerine göre renk paleti kullan

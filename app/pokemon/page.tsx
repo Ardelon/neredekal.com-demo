@@ -1,12 +1,11 @@
 import { Gallery, GallerySkeleton } from "@/components";
 import { getPokemonList } from "@/service";
-import { IPokemonList } from "@/interface/pokemonInterface";
 import { Pagination } from "@/components/gallery";
 
 async function fetchPokemons(page: number) {
   const limit: number = parseInt(process.env.POKEMON_DISPLAY_COUNT ?? "20", 10);
   const offset = (page - 1) * limit;
-  const pokemonList: IPokemonList = await getPokemonList(offset);
+  const pokemonList = await getPokemonList(offset);
 
   return {
     pokemonList,
@@ -30,7 +29,7 @@ const PokemonGalleryPage = async ({
     currentPage = 20,
   } = await fetchPokemons(page);
   // const pokemonList: IPokemonList = await getPokemonList(0);
-  if (!pokemonList) return;
+  if ("message" in pokemonList) return;
   <div>
     <GallerySkeleton></GallerySkeleton>;
     <Pagination currentPage={currentPage} totalPages={totalPages}></Pagination>

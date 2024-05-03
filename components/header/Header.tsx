@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "../uiKit";
+import { Button, Input } from "../uiKit";
 
 const Header = () => {
   return (
@@ -9,7 +9,7 @@ const Header = () => {
       </Link>
       <div className="flex flex-row border-2 border-[#3865d2] rounded-xl items-center w-3/5 h-2/5">
         <img className="px-4" src={"/Vector.png"} />
-        <input className="w-4/5 h-16" id="input" placeholder="Search"></input>
+        <Input />
         <Button />
       </div>
       {/* <h1></h1> */}

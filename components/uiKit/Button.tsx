@@ -23,7 +23,7 @@ const Button: React.FC<{}> = () => {
   };
   return (
     <button
-      className="bg-[#fecb05] px-4 py-2 rounded-lg  text-[#3865d2] text-xl font-bold"
+      className="bg-[#fecb05] px-4 py-2 mr-4 rounded-lg  text-[#3865d2] xl:text-xl md:text-lg text-base font-bold"
       onClick={fn}
       aria-label="Search Pokémon"
     >

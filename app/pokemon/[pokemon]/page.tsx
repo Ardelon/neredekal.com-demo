@@ -48,7 +48,7 @@ const PokemonDetailPage = async ({
   return (
     <div className="flex flex-col">
       <PokemonDetailHeader identifier={params.pokemon} />
-      <div className="flex flex-row w-4/5 m-auto gap-8 justify-center">
+      <div className="flex md:flex-row flex-col w-4/5 m-auto gap-8 justify-center ">
         <PokemonDetailLeftSide pokemon={pokemon} />
         <PokemonDetailRightSide
           pokemon={pokemon}

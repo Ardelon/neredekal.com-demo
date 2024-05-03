@@ -20,15 +20,18 @@ export const GalleryCard = async (props: propsInterface) => {
   }
 
   return (
-    <div className="w-64 p-2 border-2 border-[#3865d2]   rounded-lg ">
+    <div className="  md:w-64 w-full  p-2 border-2 border-[#3865d2]   rounded-lg ">
       <Link href={`/pokemon/${identifier}`}>
-        <img className="w-60 h-60" src={pokemon.sprites.front_default} />
+        <img
+          className=" md:w-60 md:h-60 w-full "
+          src={pokemon.sprites.front_default}
+        />
 
         <div>
-          <h2 className="font-bold text-2xl">
+          <h2 className="font-bold md:text-2xl text-xl">
             {capitalizeFirstLetter(props.pokemon.name)}
           </h2>
-          <h3 className="font-semibold text-xl pt-1">
+          <h3 className="font-semibold md:text-xl text-lg  pt-1">
             {preparePokemonIdForDisplay(String(pokemon.id))}
           </h3>
         </div>

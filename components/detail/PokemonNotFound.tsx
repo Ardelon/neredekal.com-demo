@@ -26,7 +26,7 @@ const PokemonNotFound: React.FC<PokemonNotFoundProps> = () => {
 
   return (
     <div className="flex flex-col w-4/5 m-auto gap-8 justify-center">
-      <h2 className="text-3xl font-semibold text-center my-4">
+      <h2 className="xl:text-3xl md:text-2xl sm:text-xl font-semibold text-center my-4">
         We cannot find the Pokemon you are looking for but here are some of them
       </h2>
       <section className="flex flex-wrap w-4/5 m-auto gap-4 justify-center">

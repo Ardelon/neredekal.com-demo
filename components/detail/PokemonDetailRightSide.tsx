@@ -66,7 +66,9 @@ const PokemonDetailRightSide: React.FC<PokemonDetailRightSideInterface> = (
       </p>
       <div className="border-2 mt-8 border-[#3865d2] rounded-xl"></div>
       <h3 className="font-bold my-4 text-xl">Evolutionary Line</h3>
-      <div className="flex flex-row justify-between">{evolutionChainCards}</div>
+      <div className="flex flex-col xl:flex-row xl:justify-between items-center">
+        {evolutionChainCards}
+      </div>
       <div className="border-2 my-8 border-[#3865d2] rounded-xl"></div>
     </div>
   );

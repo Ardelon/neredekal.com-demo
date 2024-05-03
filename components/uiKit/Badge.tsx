@@ -30,7 +30,10 @@ const Badge: React.FC<BadgeProps> = ({ type }) => {
   const code: string = colours[type as keyof typeof colours];
   const style = { backgroundColor: code };
   return (
-    <div className="px-4 py-2 w-24 text-center rounded-full" style={style}>
+    <div
+      className="px-4 py-2 w-24 md:text-lg text-base text-center rounded-full"
+      style={style}
+    >
       {type}
     </div>
   );

@@ -20,7 +20,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages }) => {
   // }
 
   return (
-    <div className="flex w-full m-auto justify-evenly py-4 text-2xl text-[#3865d2]">
+    <div className="flex w-full m-auto justify-evenly py-4 md:text-2xl text-xl text-[#3865d2]">
       {prevPage ? (
         <Link href={`?page=${prevPage}`}>Previous</Link>
       ) : (

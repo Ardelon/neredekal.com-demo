@@ -18,7 +18,7 @@ const Input: React.FC<{}> = () => {
     <input
       id="input"
       onKeyUp={fn}
-      className="w-4/5 h-16 outline-none"
+      className="w-4/5 h-16 outline-none xl:text-lg md:text-base text-sm"
       placeholder="Search"
     />
   );

@@ -11,7 +11,7 @@
 Pokemon Api
 Marvel Api
 Uygulama bir listeleme ve bir detay sayfasından oluşmalıdır.
-Uygulama içerisinde kullanılacak sabit değerler environment bazlı tutulup ve [environmente](#envproduction) göre
+Uygulama içerisinde kullanılacak sabit değerler environment bazlı tutulup ve [environmente](#envdevelopment) göre
 değişiklik gösterebilir olmalıdır.
 
 - Route yapısı isteğe bağlı belirleyeceğiniz bir patternde olabilir.
@@ -42,7 +42,7 @@ Uygulama aşağıdaki sayfalardan oluşmaktadır ve [bu tasarım](https://dribbb
 
 Demo isterleri doğrultusunda ve zaman kısıtını da hesaba katınca daha fazla sayfa yazılmamış ve eldeki sayfalar zenginleştirilmiştir. Kullanılan API'ın sayfada sergilenen bilgilerle tam olarak örtüşmemesinden dolayı arzulanandan fazla istek atılmaktadır. Uygun API servisleri ile servis edilen veriler sayfalara uygun hale getirilirse performansta artış görülecektir.
 
-#### .env.production
+#### .env.development
 
 - POKEMON_DISPLAY_COUNT=10
   - Listede Gösterilecek Pokemonların sayısı

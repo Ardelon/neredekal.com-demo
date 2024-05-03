@@ -11,7 +11,7 @@
 Pokemon Api
 Marvel Api
 Uygulama bir listeleme ve bir detay sayfasından oluşmalıdır.
-Uygulama içerisinde kullanılacak sabit değerler environment bazlı tutulup ve environmente göre
+Uygulama içerisinde kullanılacak sabit değerler environment bazlı tutulup ve [environmente](#envproduction) göre
 değişiklik gösterebilir olmalıdır.
 
 - Route yapısı isteğe bağlı belirleyeceğiniz bir patternde olabilir.
@@ -41,6 +41,12 @@ Uygulama aşağıdaki sayfalardan oluşmaktadır ve [bu tasarım](https://dribbb
 - Bulunamadı Sayfası
 
 Demo isterleri doğrultusunda ve zaman kısıtını da hesaba katınca daha fazla sayfa yazılmamış ve eldeki sayfalar zenginleştirilmiştir. Kullanılan API'ın sayfada sergilenen bilgilerle tam olarak örtüşmemesinden dolayı arzulanandan fazla istek atılmaktadır. Uygun API servisleri ile servis edilen veriler sayfalara uygun hale getirilirse performansta artış görülecektir.
+
+#### .env.production
+
+POKEMON_DISPLAY_COUNT=10 <!-- Listede Gösterilecek Pokemonların sayısı -->
+POKEMON_COUNT=1025 <!-- Toplam Pokemon Sayısı -->
+POKEMON_NOT_FOUND_DISPLAY_COUNT=10 <!-- Pokemon bulunamadığında Listede Gösterilecek Pokemonların sayısı -->
 
 ## Lighthouse & Performans Test Sonuçları
 
